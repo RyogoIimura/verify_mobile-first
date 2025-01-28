@@ -1,0 +1,39 @@
+
+// Noto Sans JP
+@mixin fontNotoJp {
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+.noto_jp {
+  @include fontNotoJp;
+}
+
+// Gothic A1
+@mixin fontGothA1M {
+  font-family: "Gothic A1", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+@mixin fontGothA1Exb {
+  font-family: "Gothic A1", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+.goth_a1_m {
+  @include fontGothA1M;
+}
+.goth_a1_exb {
+  @include fontGothA1Exb;
+}
+
+// Special Elite:
+@mixin fontSpecialElite {
+  font-family: "Special Elite", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.special_elite {
+  @include fontSpecialElite;
+}

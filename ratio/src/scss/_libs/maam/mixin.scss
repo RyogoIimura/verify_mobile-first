@@ -1,0 +1,58 @@
+@use 'sass:math';
+
+@use 'easings' as *;
+@use 'media' as *;
+@use 'fonts' as *;
+
+
+//共通変数
+// $BREAKPOINT: 736px;
+// $BREAKPOINT_O: 737px;
+// $mn: math.div(0.1rem * 320, 750);
+
+// $BASE_COLOR: #D70012;
+// $IMG_DIR: '/static/docs/studioclip/pages/riko_masato_22summer/assets/images/';
+
+@function mn($value: 0){
+  @return $value * math.div(0.1rem * 320, 750)
+};
+
+@function vw($value: 0, $molecule: 750){
+  @return math.div(100vw * $value, $molecule)
+};
+
+@function vh($denominator: 0, $molecule: 0){
+  @return math.div(100vh * $denominator, $molecule);
+};
+
+@function per($denominator: 0, $molecule: 0){
+  @return math.div(100% * $denominator, $molecule);
+};
+
+@function em($denominator: 0, $molecule: 0){
+  @return math.div(1em * $denominator, $molecule);
+};
+
+
+@keyframes under-line {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(-1px, 7px) rotate(15deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@keyframes hover-b {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50%,
+  100% {
+    transform: translate(0, -100%);
+  }
+}
+
+// pxで返す関数
+$ratio: .8px;
+@function ratio($value: 0){
+  @return $value * $ratio
+};

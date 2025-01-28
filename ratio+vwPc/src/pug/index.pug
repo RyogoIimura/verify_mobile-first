@@ -1,0 +1,38 @@
+extends ./_layout/layout
+block head
+  link(href=`/${CSS_DIR}core.css?${now.getTime()}` rel='stylesheet' type='text/css')
+
+  .
+    <link rel="stylesheet" href="https://use.typekit.net/yax6ccr.css">
+    <script>
+      (function(d) {
+        var config = {
+          kitId: 'ivp6qzp',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>
+
+block content
+  .wrapper#wrapper
+    .movie
+      .ytWrapper: #player(data-youtube='0DqYfXS1grI')
+      .poster: img(src=`${IMG_DIR}poster.jpg`)
+    .pc_bg
+      .img: img(src=`${IMG_DIR}bg.jpg`)
+      .img: img(src=`${IMG_DIR}bg.jpg`)
+    main
+      include ./_modules/mv
+      .bgContent
+        include ./_modules/contents
+        include ./_modules/yoruneko
+        include ./_modules/onlineshop
+        include ./_modules/about
+    include ./_modules/footer
+    //- .content
+    //- include ./_modules/yoruneko_modal
+
+block script
+  script(src=`/${JS_DIR}index.js?${now.getTime()}` defer)

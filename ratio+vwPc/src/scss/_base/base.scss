@@ -1,0 +1,58 @@
+@use '../_libs/maam/mixin' as *;
+@use '../_libs/maam/easings' as *;
+@use './_project' as *;
+
+html{
+  // font-family: 'Hiragino Kaku Gothic Pro', 'メイリオ', 'ＭＳ Ｐゴシック', -apple-system, BlinkMacSystemFont, sans-serif;
+  // min-width: 1080px;
+  -webkit-font-smoothing: antialiased;
+  // font-feature-settings: 'palt';
+  // ::selection {
+  //   background-color: #666;
+  // }
+}
+
+
+// body {
+//   text-size-adjust: 100%;
+// }
+
+a {
+  display: block;
+  width: 100%;
+  color: inherit;
+  text-decoration: inherit;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+img,
+video {
+  display: block;
+  width: 100%;
+}
+
+.sp {
+  display: none !important;
+}
+
+
+// responsive
+@media screen and (max-width: ($BREAKPOINT)) {
+  html,
+  body {
+    min-width: 100%;
+  }
+
+
+  .pc {
+    display: none !important;
+  }
+
+  .sp {
+    display: block !important;
+  }
+}

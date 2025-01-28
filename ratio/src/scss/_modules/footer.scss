@@ -1,0 +1,78 @@
+/*
+
+  footer
+
+*/
+@use 'sass:math';
+
+@use '../_base/_project' as *;
+@use '../_libs/maam/mixin' as *;
+@use '../_libs/maam/media' as *;
+@use '../_libs/maam/breakpoint' as *;
+
+.footer {
+  &__inner {
+    padding-top: vw(153);
+    padding-bottom: vw(78);
+    color: $wh;
+    @include Nim_R;
+  }
+  .logo {
+    fill: $wh;
+    width: vw(491);
+    margin: 0 auto;
+  }
+
+  .links {
+    margin: 0 auto;
+    margin-top: vw(258);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: vw(13);
+    font-size: vw(32);
+    width: fit-content;
+
+    &__link {
+      a {
+        padding: vw(20);
+        opacity: 1;
+      }
+    }
+  }
+
+  .copyright {
+    margin-top: vw(347);
+    font-size: vw(30);
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: ($BREAKPOINT)){
+  .footer {
+    &__inner {
+      padding-top: ratio(153);
+      padding-bottom: ratio(78);
+    }
+    .logo {
+      width: ratio(491);
+    }
+
+    .links {
+      margin-top: ratio(258);
+      gap: ratio(13);
+      font-size: ratio(32);
+
+      &__link {
+        a {
+          padding: ratio(20);
+        }
+      }
+    }
+
+    .copyright {
+      margin-top: ratio(347);
+      font-size: ratio(30);
+    }
+  }
+}

@@ -1,0 +1,7 @@
+footer.footer
+  .footer__inner
+    .logo: +logo
+    ul.links
+      each link in footer.links
+        li.links__link: a(href=`${link.url}` target='_blank')!=link.name
+    p.copyright: small!=footer.copyright

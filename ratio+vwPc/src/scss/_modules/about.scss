@@ -1,0 +1,48 @@
+/*
+
+  about
+
+*/
+@use 'sass:math';
+
+@use '../_base/_project' as *;
+@use '../_libs/maam/mixin' as *;
+@use '../_libs/maam/fonts' as *;
+@use '../_libs/maam/breakpoint' as *;
+
+.about {
+  @include mf(padding-top, (193));
+  @include mf(padding-bottom, (188));
+
+  .brand {
+    @include mf(width, (602));
+    margin: 0 auto;
+
+    +.brand {
+      @include mf(margin-top, (113));
+    }
+    &__logo{
+      margin: 0 auto;
+
+      &.ornekobyclip {
+        @include mf(width, (248));
+        @include mf(margin-bottom, (88));
+      }
+      &.orneko {
+        @include mf(width, (267));
+        @include mf(margin-bottom, (72));
+      }
+    }
+    &__text {
+      @include mf(font-size, (26));
+      line-height: math.div(42,26);
+      letter-spacing: 0.05em;
+      text-align: justify;
+
+      .textlink {
+        @include mf(margin-top, (23));
+        @include mf(margin-left, (-20));
+      }
+    }
+  }
+}

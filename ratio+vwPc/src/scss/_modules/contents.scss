@@ -1,0 +1,48 @@
+/*
+
+  contents
+
+*/
+@use 'sass:math';
+
+@use '../_base/_project' as *;
+@use '../_libs/maam/mixin' as *;
+@use '../_libs/maam/media' as *;
+@use '../_libs/maam/easings' as *;
+@use '../_libs/maam/fonts' as *;
+@use '../_libs/maam/breakpoint' as *;
+
+.contents {
+  @include mf(padding-top, (214));
+  @include mf(padding-bottom, (221));
+
+  .content {
+    text-align: center;
+
+    +.content {
+      @include mf(margin-top, (197));
+    }
+    &__img {
+      @include mf(border-radius, (40));
+      overflow: hidden;
+      img {
+        transform: scale(1);
+        transition: 0.4s $ease-out-quart;
+      }
+    }
+    &__title {
+      @include Nim_B;
+      @include mf(font-size, (32));
+      @include mf(margin-top, (52));
+    }
+    &__desc {
+      @include mf(font-size, (26));
+      letter-spacing: 0.15em;
+      @include mf(margin-top, (13));
+      font-feature-settings: "palt";
+    }
+    &__link {
+      @include mf(margin-top, (51));
+    }
+  }
+}

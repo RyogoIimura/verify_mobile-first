@@ -1,0 +1,64 @@
+@use 'sass:math';
+@use '../_libs/mixin' as *;
+@use '../_libs/easings' as *;
+
+html{
+  width: 100%;
+  font-family: 'Hiragino Kaku Gothic Pro', 'メイリオ', 'ＭＳ Ｐゴシック', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: 'palt';
+  line-height: 1;
+  color: #000;
+
+  ::selection {
+    background-color: #666;
+  }
+}
+
+body {
+  text-size-adjust: 100%;
+
+  .wrapper {
+    // overflow: hidden;
+
+    img, video {
+      width: 100%;
+    }
+
+    .contents {
+      margin: calc(vw(94) + 16px) 0;
+    }
+  }
+}
+
+.pc {
+  display: none !important;
+}
+
+@media screen and (min-width: ($BREAKPOINT)) {
+  body {
+    .wrapper {
+      .contents {
+        margin: 160px 0;
+      }
+    }
+  }
+
+  .sp {
+    display: none !important;
+  }
+  .pc {
+    display: block !important;
+  }
+
+  // hover
+  @keyframes mo_tic {
+    0% { opacity: 0.1; }
+    100% { opacity: 1; }
+  }
+  .mo_tic {
+    &:hover {
+      animation: mo_tic 1000ms 1 cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+  }
+}

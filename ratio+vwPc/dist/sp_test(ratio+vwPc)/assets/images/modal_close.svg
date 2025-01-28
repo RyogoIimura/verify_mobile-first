@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #000;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="design">
+    <g id="modal_close">
+      <circle class="cls-1" cx="32" cy="32" r="32"/>
+      <g>
+        <rect class="cls-2" x="30.64" y="17.85" width="2" height="29.92" transform="translate(-13.93 31.98) rotate(-45)"/>
+        <rect class="cls-2" x="16.68" y="31.81" width="29.92" height="2" transform="translate(-13.93 31.98) rotate(-45)"/>
+      </g>
+    </g>
+  </g>
+</svg>

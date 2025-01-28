@@ -1,0 +1,96 @@
+@use 'sass:math';
+
+@use 'easings' as *;
+@use 'media' as *;
+@use 'fonts' as *;
+@use '../../_base/project' as *;
+
+//共通変数
+// $BREAKPOINT: 736px;
+// $BREAKPOINT_O: 737px;
+// $mn: math.div(0.1rem * 320, 750);
+
+// $BASE_COLOR: #D70012;
+// $IMG_DIR: '/static/docs/studioclip/pages/riko_masato_22summer/assets/images/';
+
+@function mn($value: 0){
+  @return $value * math.div(0.1rem * 320, 750)
+};
+
+@function vw($value: 0, $molecule: 750){
+  @return math.div(100vw * $value, $molecule)
+};
+
+@function vh($denominator: 0, $molecule: 0){
+  @return math.div(100vh * $denominator, $molecule);
+};
+
+@function per($denominator: 0, $molecule: 0){
+  @return math.div(100% * $denominator, $molecule);
+};
+
+@function em($denominator: 0, $molecule: 0){
+  @return math.div(1em * $denominator, $molecule);
+};
+
+
+@keyframes under-line {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(-1px, 7px) rotate(15deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@keyframes hover-b {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50%,
+  100% {
+    transform: translate(0, -100%);
+  }
+}
+
+// pxで返す関数
+$ratio: .8px;
+@function ratio($value: 0){
+  @return $value * $ratio
+};
+// PC用のvwを返す関数
+@function vwPc($value: 0, $molecule: 2000){
+  @return math.div(100vw * $value, $molecule)
+};
+// 数字の配列を指定した関数に入れて返す関数（文字列はそのまま返す）
+// 例 : value((214,auto,0), 'vw') → vw(214) auto 0
+@function value($array, $funcName){
+  $value: null;
+  @each $e in $array {
+    @if type-of($e) == number {
+      @if $funcName == 'vw' {
+        $value: $value vw($e);
+      }
+      @if $funcName == 'ratio' {
+        $value: $value ratio($e);
+      }
+      @if $funcName == 'vwPc' {
+        $value: $value vwPc($e);
+      }
+    }
+    @else {
+      $value: $value $e;
+    }
+  }
+  @return $value;
+}
+// 指定したプロパティと値（配列）を各ブレイクポイントで自動に指定（vw, ratio, vwPc）するミックスイン
+@mixin mf($property, $array){
+  #{$property}: value($array, 'vw');
+
+  @media screen and (min-width: ($BREAKPOINT)){
+    #{$property}: value($array, 'ratio');
+
+    @media screen and (min-width: ($RATIO_BP)){
+      #{$property}: value($array, 'vwPc');
+    }
+  }
+}

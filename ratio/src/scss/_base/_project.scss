@@ -1,0 +1,114 @@
+// ===========================
+// 画像ディレクトリ
+// ===========================
+$IMG_DIR: '../images/';
+
+
+// ===========================
+// サイズ
+// ===========================
+//ブレイクポイント
+$breakpoint: 767;
+$BREAKPOINT: 767px;
+$breakpoint_o: 768;
+$BREAKPOINT_O: 768px;
+$pc_maxW: 1180px;
+
+//デザインのサイズ
+$spW: 750;
+$pcW: 1280;
+
+$pc_contentW: 468;
+
+//デザインのサイズ
+$pc_maxW: 980;
+
+// ===========================
+// z-index
+// ===========================
+// 大要素の重なりはここに記入して、map-getで呼び出してください
+// 
+// .header {
+//   z-index: map-get($z, header);
+// }
+// .fixBtn {
+//   z-index: map-get($z, fixBtn);
+// }
+
+$z: (
+  // langSwitch: 400,
+  // menu_open: 300,
+);
+
+// ===========================
+// フォント設定
+// ===========================
+$fontBaseSize: 14px;
+
+
+// DNP Shuei Gothic Gin Std
+.ShueiGo_M {
+  font-family: "dnp-shuei-gothic-gin-std", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+.ShueiGo_B {
+  font-family: "dnp-shuei-gothic-gin-std", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+@mixin ShueiGo_M {
+  font-family: "dnp-shuei-gothic-gin-std", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+@mixin ShueiGo_B {
+  font-family: "dnp-shuei-gothic-gin-std", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+// Nimbus Sans
+.Nim_R {
+  font-family: "nimbus-sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.Nim_B {
+  font-family: "nimbus-sans", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.Nim_Black {
+  font-family: "nimbus-sans", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+@mixin Nim_R {
+  font-family: "nimbus-sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+@mixin Nim_B {
+  font-family: "nimbus-sans", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+@mixin Nim_Black {
+  font-family: "nimbus-sans", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+// ===========================
+// 色設定
+// ===========================
+$bk: #000 !default;
+$wh: #fff !default;
+$blue: #0093CA !default;
+$gray: #C1C1C1 !default;
+
+$link_color: #E1B7AA !default;
+$pn_color: #A5A7B6 !default;
+$pn_color_acrive: $bk !default;
+// $gray: #332F30 !default;

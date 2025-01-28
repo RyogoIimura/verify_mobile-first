@@ -1,0 +1,77 @@
+/*
+
+  about
+
+*/
+@use 'sass:math';
+
+@use '../_base/_project' as *;
+@use '../_libs/maam/mixin' as *;
+@use '../_libs/maam/fonts' as *;
+@use '../_libs/maam/breakpoint' as *;
+
+.about {
+  padding-top: vw(193);
+  padding-bottom: vw(188);
+
+  .brand {
+    width: vw(602);
+    margin: 0 auto;
+    +.brand {
+      margin-top: vw(113);
+    }
+    &__logo{
+      margin: 0 auto;
+      &.ornekobyclip {
+        width: vw(248);
+        margin-bottom: vw(88);
+      }
+      &.orneko {
+        width: vw(267);
+        margin-bottom: vw(72);
+      }
+    }
+    &__text {
+      font-size: vw(26);
+      line-height: math.div(42,26);
+      letter-spacing: 0.05em;
+      text-align: justify;
+      .textlink {
+        margin-top: vw(23);
+        margin-left: vw(-20);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: ($BREAKPOINT)){
+  .about {
+    padding-top: ratio(193);
+    padding-bottom: ratio(188);
+
+    .brand {
+      width: ratio(602);
+
+      +.brand {
+        margin-top: ratio(113);
+      }
+      &__logo{
+        &.ornekobyclip {
+          width: ratio(248);
+          margin-bottom: ratio(88);
+        }
+        &.orneko {
+          width: ratio(267);
+          margin-bottom: ratio(72);
+        }
+      }
+      &__text {
+        font-size: ratio(26);
+        .textlink {
+          margin-top: ratio(23);
+          margin-left: ratio(-20);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+/*
+
+  mv
+
+*/
+@use 'sass:math';
+
+@use '../_base/_project' as *;
+@use '../_libs/maam/mixin' as *;
+@use '../_libs/maam/breakpoint' as *;
+
+
+.mv {
+  padding-bottom: vw(93);
+
+  &__title {
+    width: vw(358);
+    margin: vw(253) auto 0;
+  }
+
+  &__lead {
+    text-align: center;
+    color: $wh;
+    font-feature-settings: "palt";
+    letter-spacing: 0.07em;
+    margin: vw(410) auto 0;
+    font-size: vw(30);
+    line-height: math.div(58,30);
+  }
+}
+
+@media screen and (min-width: ($BREAKPOINT)){
+  .mv {
+    padding-bottom: ratio(93);
+
+    &__title {
+      width: ratio(358);
+      margin: ratio(253) auto 0;
+    }
+
+    &__lead {
+      margin: ratio(410) auto 0;
+      font-size: ratio(30);
+    }
+  }
+}

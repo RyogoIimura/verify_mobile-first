@@ -1,0 +1,9 @@
+section.section.online
+  h2.section__head ONLINE SHOP
+  a.gif__wrapper(href=`${homeUrl}` target='_blank')
+    .gif.swiper
+      .swiper-wrapper
+        -for( let i = 0; i < 6; i++ )
+          .swiper-slide: img(src=`${IMG_DIR}onlineshop_img0${i+1}.jpg`)
+  a.btn(href=`${homeUrl}` target='_blank'): span ONLINE SHOP
+  p.text オンラインショップはこちら

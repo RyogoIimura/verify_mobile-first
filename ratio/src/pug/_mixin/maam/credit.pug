@@ -1,0 +1,15 @@
+mixin credits(index)
+  ul.credits
+    -for(let i = 0; i < contentsCredits[index].credits.length; i += 1)
+      li.credit.f-nim-r(data-item-id!=contentsCredits[index].credits[i].id data-item-display="1")
+        a(href!=contentsCredits[index].credits[i].url target = '_blank')
+          span.credit__name!=`${contentsCredits[index].credits[i].name}&nbsp;&nbsp;`
+
+          - if(contentsCredits[index].credits[i].brand !== 'BEAMS')
+            span.credit__brand.f-nim-r-i!=`${contentsCredits[index].credits[i].brand}&nbsp;&nbsp;`
+
+          - if(contentsCredits[index].credits[i].brBeforePrice)
+            br
+
+          span.credit__price!=`&yen;${contentsCredits[index].credits[i].price.toLocaleString()} (inc.tax)`
+          span.credit__buy BUY

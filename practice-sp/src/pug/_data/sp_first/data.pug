@@ -1,0 +1,167 @@
+-
+  const page = {
+    name: 'sp_first',
+  }
+
+  const main = {
+    topics: '<span>(TOPICS)</span><br>D‘AZUR / AGGY / PARIS / CHAIN NECKLACE / GUETHARY<br>ANGIE / KOURTNEY / CROCODILE TIGHT SKIRT<br>ST.MORRITZ / JAZZ / HELLO TEE KIDS / BONDI / ROSE',
+    lead: '10周年を記念して、さまざまな<br>プロジェクトがありました。<br>新しい出会いと初めての発見。<br>ものを作る喜びをあらためて感じた商品です。<br>それぞれに忘れがたい物語がありました。<br><br>どうぞ皆様にも喜んでいただけますように。',
+  }
+
+  const mdlItem = [
+    //- 1
+    {
+      name: 'D‘AZUR',
+      date: '4.17 ON SALE',
+      online: 'https://shop-madisonblue.net/view/item/000000001468?category_page_id=ct68',
+      info: null,
+      text: '18年FWに登場したBIB SKIRTの10周年の復刻アイテム。インディゴデニムの色でたっぷりとフレアを効かせたシルエットから「紺碧の海岸（コートダジュール）」をイメージして命名。タテ糸はナチュラルインディゴ染料を使用し、ヨコ糸はナチュラルなムラネップ糸を使用した素材。ヒゲとスレ感の加工はすべて手作業で微調整してブリーチし、さらにオーバーダイ＋ハンドの汚しを入れてナチュラルなUSED感に。 ウエストラインがスッキリとしたマキシ丈の大人のジャンパースカート。',
+      mdl_img: 2
+    },
+    {
+      name: 'AGGY',
+      brand: 'RED CARD TOKYO × MADISONBLUE',
+      date: '7.3 ON SALE',
+      online: 'https://shop-madisonblue.net/view/search?search_keyword=MADISONBLUE%A1%DFRED+CARD&search_price_low=&search_price_high=&search_category=&search_original_code=',
+      info: null,
+      text: '昔からデニムに並々ならぬこだわりを持つデザイナー中⼭まりこと、RED CARD®︎TOKYOプロデューサーのドクターデニムこと本澤裕治⽒がタッグを組み、「NEW VINTAGE」をテーマにした 旧くて新しい“⾄極の永久不滅デニム”を制作。中⼭まりこが20代の頃から愛⽤していた。<br>60年代～70年代の古着のデニムをベースに、MADISONBLUEらしい現代的でこなれたシルエットを追求。そこに本澤⽒の持つ最新最強技術や⼯場や、優れた加⼯職⼈の技術など⽣産背景を集結し、ここに⾄極のアイテムが完成した。<br>⾃⾝のサイズにとらわれずユニセックスに⾃由なサイズを楽しんでもらえるようサイズ展開も豊富。“AGGY の名前の由来は2000年代に活躍したモデル、アギネス・ディーンのニックネームから。',
+      thumb_img: 2,
+      mdl_img: 8
+    },
+    {
+      name: 'CHAIN<br>NECKLACE',
+      name2: 'CHAIN NECKLACE',
+      date: '7.7 ON SALE',
+      online: 'https://shop-madisonblue.net/view/item/000000001633?category_page_id=ct68',
+      info: null,
+      text: 'チェーントップは、トゥアレグ*のデザインからインスピレーションを得たブランドの代表的なモチーフを、シルバージュエリーからゴールドに変えて再構築した。チェーンは中⼭のコレクションから特に80年代のコスチュームジュエリーを参考に、有機的で独特なパーツを組み合わせてすべてオリジナルで制作。コスチュームジュエリーならではの⼤胆でボリュームのあるデザインに仕上げた。ヴィンテージ感がある⻩みの強い24Ｋを真鍮にコーティングさせることで、⾝に着ける⼈の体温や使用頻度、⼿⼊れの具合次第で異なる経年を楽しめる仕様に。ブランドコンセプトでもある経年変化を楽しむというスタイルを、ジュエリーにも取り入れた。<br>トップの裏には「LIVE YOUR LIFE YOU LOVE（あなたの愛する⼈⽣を⽣きて）」のメッセージが。',
+      mdl_img: 2
+    },
+    {
+      name: 'PARIS',
+      date: '12.11 ON SALE',
+      online: 'https://shop-madisonblue.net/view/item/000000001845',
+      info: null,
+      text: '2018年の誕⽣以来、《HELLO TEE》は今やブランドアイコンのひとつである。<br>ジャケットのインナーに着たときの⾒え⽅、顔映りにこだわり、やや⾼めの位置に配置したロゴや、少し着込んだように制作した⽣地など、細部にこだわった１枚が誕生した。<br>10周年の記念に誕⽣したグリッターロゴを配したHELLO TEEは、2000年代のムードや、エッフェル塔のシャンパンフラッシュを想わせる煌めきから PARIS と名付けられた。',
+      annotation: '＊毎日夜の決まった時間にエッフェル塔がキラキラ光るライトアップすることを、シャンパンフラッシュと呼ぶ。',
+      mdl_img: 2
+    },
+    {
+      name: 'ANGIE',
+      date: '8.7 ON SALE',
+      online: 'https://shop-madisonblue.net/view/item/000000001621?category_page_id=ct68',
+      info: null,
+      text: 'デザイナー中⼭まりこが⻑年着込んだ《HELLO TEE》のレプリカとして誕⽣した《VINTAGE HELLO TEE》。<br>ヴィンテージ感を出すため⾵合いや表⾯感、裾や襟のハンドステッチやペンキの汚れなどを模したダメージ加⼯だけでなく、しっかりプレスせずにふんわりとした仕上げにもこだわった１枚。<br>着古してボロボロのロックTをラフに着る、陽気なL.A.の雰囲気からANGIE と名付けられた。',
+      thumb_img: 2,
+      mdl_img: 3
+    },
+
+    //- 6
+    {
+      name: 'GUETHARY',
+      date: '8.7 ON SALE',
+      online: 'https://shop-madisonblue.net/view/search?search_keyword=GUETHARY&search_price_low=&search_price_high=&search_category=&search_original_code=',
+      info: null,
+      text: 'デザイナー中⼭まりこが10年着古したファーストコレクションのワークシャツ《HAMPTON》のレプリカとして制作した《VINTAGE HAMPTON》。ヨーロッパの⾼級リゾート地ビアリッツからさらに南下した、サーファーとスケーターの集まる街“GUETHARY 。そのストリートに溶け込むような、着古した上質なワークシャツをイメージしている。中⼭にとってもひときわ思い⼊れのあるアイテム。',
+      thumb_img: 2,
+      mdl_img: 3
+    },
+    {
+      name: 'KOURTNEY',
+      brand: 'ROCKEY MOUNTAIN × MADISONBLUE',
+      date: '8.7 ON SALE',
+      online: 'https://shop-madisonblue.net/view/item/000000001623?category_page_id=ct68',
+      info: null,
+      text: 'アメリカ・ワイオミング州のジャクソンホールで誕⽣したダウンウェアブランドRocky Mountain FeatherBedとコラボレーションしたダウンベスト。縦⻑のシルエットがモダンな印象を与え、ブランドタグが型押しされたレザーパッチと、オリジナルの第４ボタンがポイント。<br>シンプルなオールブラックと、グリーンの裏地がアクセントになるベージュの２⾊展開。',
+      thumb_img: 2,
+      mdl_img: 4
+    },
+    {
+      name: 'St.Moritz',
+      date: '10.9 ON SALE',
+      online: 'https://shop-madisonblue.net/view/item/000000001624?category_page_id=ct68',
+      info: null,
+      text: '2023年に好評を得たコレクションアイテムが、10周年記念として復刻。ブランドのアイコニックな素材であるウールの接結を使って、すべてをシームレスに仕上げたスタジャン。腕には10周年を意味する10の数字のワッペンと、胸元にはパールを連想させる装飾を施したＢワッペンが輝くスペシャル仕様。スイスのサンモリッツはウィンタースポーツが盛んで “冬の社交場”とも呼ばれている。セレブが集うその場所は、晴天の澄んだ空と輝く雪のコントラストが美しい。スポーティーだがエレガントな仕様のスタジャンのイメージが膨らむ St.Moritz の名を受けた。豊富なサイズ展開で、⼥性も男性も⾃⾝の好きなバランスでサイズ選びを楽しんで。',
+      thumb_img: 2,
+      mdl_img: 5
+    },
+    {
+      name: 'PETIT MADISONBLUE',
+      date: '11.1 ON SALE',
+      online: null,
+      info: null,
+      text: 'ブランド初のキッズ服は、ブランドアイコンのHello のデザイン。<br>大人が着ている《Hello TEE》と同じバランスにして制作した⼤⼈顔のキッズ服。<br>100～130の４サイズで、ベーシックなホワイトとクールなブラックの２⾊展開。⼦供の繊細な肌に配慮してタグは外側に。ママやパパ、バーバやジージとお揃いで楽しんで。',
+      thumb_img: 2,
+      mdl_img: 2
+    },
+    {
+      name: 'BONDI',
+      date: '11.13 ON SALE',
+      online: 'https://shop-madisonblue.net/view/search?search_keyword=BONDI&search_price_low=&search_price_high=&search_category=&search_original_code=',
+      info: null,
+      text: '体が冷えたら⽔着の上から纏う、肌寒い夜にはストールがわりに⽻織るなど、季節にとらわれないファーアイテムとして提案。⾃由でヘルシーなスタイリングが似合うラビットファーで⼿編みしたカウチンとノルディックセーターは、シドニーを代表するビーチタウン BONDI から名付けられた。美しい海はもちろん、グルメやウェルネス、ファッション、ストリートアートなど独特のカルチャーを⽣み出す街。カウチンのバックスタイルの「hello」の吹き出しワッペンもチェックして。',
+      thumb_img: 2,
+      mdl_img: 7
+    },
+
+    //- 11
+    {
+      name: 'JAZZ',
+      date: '11.13 ON SALE',
+      online: null,
+      info: null,
+      text: '2023年に好評を得たコレクションアイテムを10周年記念として復刻。アメリカでもっとも由緒ある避暑地であるニューポート。その港で⾏われる世界最⼤のジャズフェスティバルには優雅で洗練された音楽好きが集まり、１⽇中⾳楽を楽しむ日々。人々がスウィングしている様⼦をデニムスカートからのぞくフリルになぞらえて JAZZ と命名した。',
+      thumb_img: 2,
+      mdl_img: 3
+    },
+    {
+      name: 'ROSE DENIM',
+      brand: 'Repetto × HAPPY PLUS STORE × MADISONBLUE',
+      date: '12.6 ON SALE',
+      online: null,
+      info: null,
+      text: '上品なラウンドトゥに華奢なストラップで⼤⼈の可愛らしさを表した、Repettoのメリージェーン「ROSE」。スティッチアンドリターン製法で１点１点⼿作業で作られた、職⼈技の光るクラシックな形で、 MADISONBLUEと親和性のあるデニム⽣地を中⼭がセレクト。コロンとした愛らしいボタンには色の濃淡が異なるデニムを使⽤してワンポイントに。<br>３cmフラットソールのコンフォートな履き⼼地で、オンにもオフにも活躍する⼀⾜。',
+      mdl_img: 3
+    },
+    {
+      name: 'TIGHT SK<br>CROCODILE',
+      name2: 'TIGHT SK CROCODILE',
+      brand: 'BACKLASH × MADISONBLUE',
+      date: 'MADE TO ORDER',
+      online: null,
+      info: null,
+      text: 'デザイナー中⼭まりこが20代の頃に憧れていたクロコダイルのスカートを、BACKLASHとのコラボレーションで制作。⾮常に稀少なパプアニューギニア産の天然クロコダイルを４匹使⽤した⾒た⽬の迫⼒はもちろん、柔らかさや裁断にこだわり、仕上げにも時間をかけた⼤変贅沢な究極の１枚になっている。<br>肌なじみの良いモーブカラー、チョコブラウンのミニマルなタイトスカートは、⼤⼈ならではのリュクス感。スタイリング提案として、あえて⽑⽟ひとつひとつ⼿作業で施した着古したような表情のカシミアニットを合わせてMADISONBLUEらしいスタイルを。',
+      mdl_img: 3
+    }
+  ]
+
+  const footer = {
+    about: [
+      'My Name is...',
+      'My Age is...'
+    ],
+    concept: 'MAEDISONBLUEの香水の原液のようなコレクションで、<br>ブランド創立当時から現在にいたるまで<br class="sp">少しずつ変化しながら続いているシリーズ。<br>白シャツ、紺ブレ、シャンブレー・シャツ、<br class="sp">ファティーグパンツなどなど<br class="pc">スタンダードなアイテムが素材や<br class="sp">ディテールを変えて違う表情の服になる。',
+    concept_url: 'https://madisonblue.net/essential',
+    shop_bag: {
+      title: 'SPECIAL SHOP BAG',
+      text: '商品購入時に使用する特別なショップバッグが10周年記念カラーで登場。ピンクは表参道店限定、イエローはオンラインストア限定、ブルーは限定品購入時に直営店及び卸先ショップでも使用されます。'
+    },
+    link: [
+      {
+        list: 'OFFICIAL SITE',
+        url: 'https://madisonblue.net/',
+      },
+            {
+        list: 'ONLINE STORE',
+        url: 'https://shop-madisonblue.net/',
+      },
+      {
+        list: 'INSTAGRAM',
+        url: 'https://www.instagram.com/madisonblue_official/',
+      },
+      {
+        list: 'LINE',
+        url: 'https://page.line.me/498wtorq?openQrModal=true',
+      }
+    ]
+  }

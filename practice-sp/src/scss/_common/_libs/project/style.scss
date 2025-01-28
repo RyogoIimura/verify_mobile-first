@@ -1,0 +1,15 @@
+@use 'sass:math';
+@use '../mixin' as *;
+@use './color' as *;
+
+@mixin dotted_line($posi){
+  background-image : linear-gradient(to right, $key_color 1px, transparent 1px);
+  background-size: 4px 1px;
+  background-repeat: repeat-x;
+  background-position: $posi;
+
+  @media screen and (min-width: ($BREAKPOINT)){
+    background-image : linear-gradient(to right, $key_color 2px, transparent 2px);
+    background-size: 6px 2px;
+  }
+}

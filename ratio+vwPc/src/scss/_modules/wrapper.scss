@@ -1,0 +1,154 @@
+@use '../_base/_project' as *;
+
+@use '../_libs/maam/fonts' as *;
+@use '../_libs/maam/easings' as *;
+@use '../_libs/maam/mixin' as *;
+@use '../_libs/maam/media' as *;
+@use '../_libs/maam/breakpoint' as *;
+
+// 全体レイアウト
+.wrapper {
+  @include mf(width, (750));
+  overflow: hidden;
+  @include ShueiGo_M;
+  opacity: 0;
+  transition: 0.8s $ease-out-cubic 0.2s;
+  display: block;
+  margin: 0 auto;
+
+  &.is-loaded.is-ready {
+    opacity: 1;
+  }
+}
+.movie {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 0;
+  aspect-ratio: 1080/1920;
+
+  // height: 100vh;
+
+  .ytWrapper {
+    // aspect-ratio: 1080/1920;
+    width: auto;
+    height: 100%;
+    // height: 100vh;
+    overflow: hidden;
+    iframe {
+      width: 102%;
+      height: 200%;
+      transform: translateY(-25%);
+    }
+  }
+  .poster {
+    display: none;
+    // height: 100vh;
+    width: 100vw;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+.pc_bg {
+  display: none;
+}
+main,
+footer {
+  position: relative;
+  z-index: 1;
+}
+.bgContent {
+  background: $wh;
+}
+
+// パーツ
+.section {
+  @include mf(width, (675));
+  margin: 0 auto;
+  border-top: 1px solid #E4E4E4;
+
+  &.contents {
+    border-top: none;
+  }
+
+  // 見出し
+  &__head {
+    @include Nim_B;
+    @include mf(font-size, (44));
+    text-align: center;
+    @include mf(margin-bottom, (90));
+  }
+}
+
+// ボタン
+.btn {
+  width: fit-content;
+  @include mf(min-width, (366));
+  @include mf(padding, (30));
+  overflow: hidden;
+  position: relative;
+  border-radius: 9999px;
+  background: $bk;
+  color: $wh;
+  @include Nim_B;
+  @include mf(font-size, (26));
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  cursor: pointer;
+
+  span {
+    display: inline-block;
+    @include mf(margin-right, (7));
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    @include mf(width, (9));
+    aspect-ratio: 9/17;
+    position: absolute;
+    @include mf(right, (40));
+    top: 50%;
+    transform: translateY(-50%);
+    background: $wh;
+    clip-path: polygon(100% 50%, 0 0, 0 100%);
+  }
+}
+
+// テキストリンク
+.textlink {
+  text-decoration: underline;
+  display: inline-block;
+  width: auto;
+  @include mf(padding, (20));
+  opacity: 1;
+}
+
+@media screen and (min-width: ($BREAKPOINT)){
+  .pc_bg {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: nowrap;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+
+    .img {
+      flex-shrink: 0;
+      width: auto;
+      height: 100vh;
+
+      img {
+        width: auto;
+        height: 100vh;
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+/*
+
+  contents
+
+*/
+@use 'sass:math';
+
+@use '../_base/_project' as *;
+@use '../_libs/maam/mixin' as *;
+@use '../_libs/maam/media' as *;
+@use '../_libs/maam/easings' as *;
+@use '../_libs/maam/fonts' as *;
+@use '../_libs/maam/breakpoint' as *;
+
+.contents {
+  padding-top: vw(214);
+  padding-bottom: vw(221);
+  .content {
+    text-align: center;
+    +.content {
+      margin-top: vw(197);
+    }
+    &__img {
+      border-radius: vw(40);
+      overflow: hidden;
+      img {
+        transform: scale(1);
+        transition: 0.4s $ease-out-quart;
+      }
+    }
+    &__title {
+      @include Nim_B;
+      font-size: vw(32);
+      margin-top: vw(52);
+    }
+    &__desc {
+      font-size: vw(26);
+      letter-spacing: 0.15em;
+      margin-top: vw(13);
+      font-feature-settings: "palt";
+    }
+    &__link {
+      margin-top: vw(51);
+    }
+  }
+}
+
+@media screen and (min-width: ($BREAKPOINT)){
+  .contents {
+    padding-top: ratio(214);
+    padding-bottom: ratio(221);
+    .content {
+      +.content {
+        margin-top: ratio(197);
+      }
+      &__img {
+        border-radius: ratio(40);
+      }
+      &__title {
+        font-size: ratio(32);
+        margin-top: ratio(52);
+      }
+      &__desc {
+        font-size: ratio(26);
+        margin-top: ratio(13);
+      }
+      &__link {
+        margin-top: ratio(51);
+      }
+    }
+  }
+}

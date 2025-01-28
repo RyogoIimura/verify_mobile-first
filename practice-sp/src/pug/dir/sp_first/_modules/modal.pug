@@ -1,0 +1,71 @@
+mixin mdl_close
+  .mdl_close.mdlClose
+    .mdl_close_container
+
+.Modal#Modal
+  .mdl_bg#mdl_bg.mdlClose
+  -for( let i = 0; i < mdlItem.length; i++ )
+    .mdl
+      .fix_wrapper
+        +mdl_close
+
+      .border_container
+        .logo: img(src=`${IMG_PATH}/logo.svg`)
+
+        .cont_wrapper
+          .img_container
+            p.mdl_num.goth_a1_exb.sp #{`${('00'+(i+1)).slice(-2)}/${mdlItem.length}`}
+            .mdl_img
+              -if( mdlItem[i].mdl_img > 1 )
+                .container.mdl_container
+                  .swiper.mdl_swiper
+                    .swiper-wrapper
+                      -for( let s = 0 ; s < mdlItem[i].mdl_img; s++ )
+                        .swiper-slide: img(src=`${IMG_PATH}/modal/mdl_img_${i+1}_${s+1}.jpg?${now.getTime()}`)
+                  .swiper-pagination.mdl_swiper-pagination
+                  .swiper-button-prev.mdl_swiper-button-prev
+                    img.arrow(src=`${IMG_PATH}/modal/arrow_prev.svg`)
+                  .swiper-button-next.mdl_swiper-button-next
+                    img.arrow(src=`${IMG_PATH}/modal/arrow_next.svg`)
+              -else
+                img(src=`${IMG_PATH}/modal/mdl_img_${i+1}_1.jpg?${now.getTime()}`)
+
+          .text_container
+            p.mdl_num.goth_a1_exb.pc #{`${('00'+(i+1)).slice(-2)}/${mdlItem.length}`}
+            p.my_name.goth_a1_m My Name is...
+            .mdl_item.goth_a1_exb
+              -if(mdlItem[i].name2)
+                p.name!=mdlItem[i].name2
+              -else
+                p.name!=mdlItem[i].name
+              -if( mdlItem[i].brand)
+                p.brand.goth_a1_m!=mdlItem[i].brand
+              p.date!=mdlItem[i].date
+            p.i_am.goth_a1_m I am...
+            .text.noto_jp
+              p!=mdlItem[i].text
+              -if( mdlItem[i].annotation )
+                p.annotation!=mdlItem[i].annotation
+            -if( mdlItem[i].online || mdlItem[i].info )
+              .link_wrapper.goth_a1_exb
+                -if( mdlItem[i].online )
+                  a.online(href=mdlItem[i].online target='_blank' rel='noopener noreferrer')
+                    .link_container
+                      p ONLINE SHOP
+                      +link_logo
+                -if( mdlItem[i].info )
+                  a.info(href=mdlItem[i].info target='_blank' rel='noopener noreferrer')
+                    .link_container
+                      p INFORMATION
+                      +link_logo
+
+        .mdl_arrow_container
+          .mdl_arrow.mdlArrowPrev
+            img.arrow(src=`${IMG_PATH}/modal/arrow_prev.svg`)
+            p.goth_a1_exb PREV.
+          +mdl_close
+          .mdl_arrow.mdlArrowNext
+            p.goth_a1_exb NEXT
+            img.arrow(src=`${IMG_PATH}/modal/arrow_next.svg`)
+
+      .mdl-magin_bottom.mdlClose.pc

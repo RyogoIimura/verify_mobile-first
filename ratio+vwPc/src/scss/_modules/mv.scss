@@ -1,0 +1,30 @@
+/*
+
+  mv
+
+*/
+@use 'sass:math';
+
+@use '../_base/_project' as *;
+@use '../_libs/maam/mixin' as *;
+@use '../_libs/maam/breakpoint' as *;
+
+
+.mv {
+  @include mf(padding-bottom, (93));
+
+  &__title {
+    @include mf(width, (358));
+    @include mf(margin, (253,auto,0));
+  }
+
+  &__lead {
+    text-align: center;
+    color: $wh;
+    font-feature-settings: "palt";
+    letter-spacing: 0.07em;
+    @include mf(margin, (410,auto,0));
+    @include mf(font-size, (30));
+    line-height: math.div(58,30);
+  }
+}

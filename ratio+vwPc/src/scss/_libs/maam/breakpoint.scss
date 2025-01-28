@@ -1,0 +1,33 @@
+// ======================================
+// 使い方
+// ======================================
+// @include mq(xxs) {
+//  ほにゃほにゃ
+// }
+// ↓
+// @media screen and (max-width: 374px) {
+//   ほにゃほにゃ
+// }
+// として出力されます。
+
+@use '../../_base/_project' as *;
+
+$breakpoints: (
+  'xxs': 'screen and (max-width: 374px)',
+  'sp': 'screen and (max-width: #{$BREAKPOINT})',
+  'tab-s': 'screen and (max-width: 890px)',
+  'tab': 'screen and (min-width: #{$BREAKPOINT_O})',
+  'pc': 'screen and (min-width: #{$pc_maxW})',
+) !default;
+
+@mixin mq($bp: tab) {
+  @media #{map-get($breakpoints, $bp)} {
+    @content;
+  }
+}
+
+.header {
+  @include mq(tab) {
+    width: 100%;
+  }
+}

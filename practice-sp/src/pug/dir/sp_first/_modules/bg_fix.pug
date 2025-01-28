@@ -1,0 +1,10 @@
+
+.bg_fix#bg_fix
+  .bg_content.bg_content_left
+    .link_wrapper
+      p left
+      -for( let i = 0; i < 13; i++ )
+        p.page_link_btn.pageLinkBtn #{`.mdl_thumb${i+1}`}
+  .bg_content.bg_content_right
+    .link_wrapper
+      p right

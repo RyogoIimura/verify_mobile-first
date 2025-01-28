@@ -1,0 +1,41 @@
+mixin picture(dir, imgPcName,imgSpName, ext=".jpg", className="", alt="")
+  picture(class=(className ? className : ''))
+    source(
+      media = '(max-width: 767px)',
+      srcset = `${dir}${imgSpName}${ext} 2x`
+      )
+    source(
+      srcset = `${dir}${imgPcName}${ext} 1x, ${dir}${imgPcName}@2x${ext} 2x`
+      )
+    img(
+      src = `${dir}${imgSpName}${ext}`,
+      alt = alt
+    )
+
+mixin picture2(pcUrl, spUrl, className="", alt="")
+  picture(class=(className ? className : ''))
+    source(
+      media = '(min-width: 768px)',
+      srcset = pcUrl
+      )
+    source(
+      media = '(max-width: 767px)',
+      srcset = spUrl
+      )
+    - if(alt)
+      img(
+        src = spUrl
+         alt = alt
+      )
+    -else
+      img(
+        src = spUrl
+      )
+mixin splitStr(str, className)
+  -
+    var strArr = str.split('');
+    var html = '';
+    for (var i = 0; i < strArr.length; i++) {
+      html += `<span class="${className}">${(strArr[i] == ' ') ? '&nbsp' : strArr[i] }</span>`;
+    }
+  |!{html}

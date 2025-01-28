@@ -1,0 +1,58 @@
+/*
+
+  online shop
+
+*/
+@use 'sass:math';
+
+@use '../_base/_project' as *;
+@use '../_libs/maam/mixin' as *;
+@use '../_libs/maam/easings' as *;
+@use '../_libs/maam/media' as *;
+@use '../_libs/maam/breakpoint' as *;
+
+.online {
+  padding-top: vw(192);
+  padding-bottom: vw(200);
+  border-top: none;
+
+  .gif__wrapper {
+    overflow: hidden;
+    margin: 0 auto;
+    border-radius: vw(33);
+    width: vw(445);
+
+    .gif {
+      transform: scale(1);
+      transition: 0.4s $ease-out-quart;
+    }
+  }
+  .btn {
+    margin-top: vw(86);
+  }
+  .text {
+    font-size: vw(26);
+    text-align: center;
+    margin-top: vw(28);
+    letter-spacing: 0.05em;
+  }
+}
+
+@media screen and (min-width: ($BREAKPOINT)){
+  .online {
+    padding-top: ratio(192);
+    padding-bottom: ratio(200);
+
+    .gif__wrapper {
+      border-radius: ratio(33);
+      width: ratio(445);
+    }
+    .btn {
+      margin-top: ratio(86);
+    }
+    .text {
+      font-size: ratio(26);
+      margin-top: ratio(28);
+    }
+  }
+}

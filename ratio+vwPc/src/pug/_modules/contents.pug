@@ -1,0 +1,8 @@
+section.section.contents
+  h2.section__head CONTENTS
+  - for( let i = 0; i < contents.length; i++ )
+    section.content
+      a.content__img(href=`${contents[i].url}` target='_blank'): img(src=`${IMG_DIR}contents_img0${i+1}.jpg` loading='lazy')
+      h3.content__title!=contents[i].title
+      p.content__desc!=contents[i].desc
+      a.content__link.btn(href=`${contents[i].url}` target='_blank'): span VIEW MORE

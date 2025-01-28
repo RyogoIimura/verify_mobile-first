@@ -1,0 +1,8 @@
+.about.section
+  each brand in about
+    .brand
+      .brand__logo(class=`${brand.class}`): img(src=`${IMG_DIR}${brand.logo}` loading='lazy')
+      .brand__text
+        p!=brand.text
+        each link in brand.links
+          a.textlink(href=`${link.url}` target='_blank' rel='noopener noreferrer')!=link.text

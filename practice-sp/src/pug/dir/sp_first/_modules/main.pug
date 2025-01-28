@@ -1,0 +1,20 @@
+
+.Main#Main
+  .tenth#tenth: +10TH
+  .anniversary#anniv: +anniversary
+  h1.madison_blue#madisonBlue: +madison_blue
+  .hel10_anniversary#hel10Anniv: +hel10_anniversary
+
+  .topics.goth_a1_exb!=main.topics
+
+  .line.line_1
+
+  h2.lead.noto_jp!=main.lead
+
+  .line.line_2
+
+  ul.scroll
+    -for(let s = 0; s < 3; s++)
+      li
+        -for(let i = 0; i < 5; i++)
+          .scroll_hel10_anniversary: +hel10_anniversary

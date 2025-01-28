@@ -1,0 +1,363 @@
+@use 'sass:math';
+@use '../../../_common/_libs/project/setting' as *;
+
+.Contents {
+  width: 100%;
+  margin: vw(110) auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  // 共通
+  .mdl_thumb {
+    width: vw(356);
+    padding-top: vw(110);
+
+    p {
+      text-align: center;
+    }
+    .img_container {
+      width: vw(304);
+      margin: 0 auto;
+      position: relative;
+      cursor: pointer;
+
+      .thumb_img {
+        width: 100%;
+        height: vw(380);
+        border-radius: vw(20);
+        overflow: hidden;
+        position: relative;
+
+        img {
+          &:not(:first-child){
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        }
+      }
+      .num {
+        width: fit-content;
+        position: absolute;
+        z-index: 5;
+
+        p {
+          font-size: vw(60);
+          letter-spacing: .05em;
+          color: $accent_color;
+          -webkit-text-stroke: .5px $key_color;
+        }
+      }
+    }
+    .name {
+      font-size: vw(35);
+      line-height: 1.3em;
+      letter-spacing: .05em;
+      color: $key_color;
+      margin-top: vw(34);
+    }
+    .brand {
+      font-size: vw(18);
+      line-height: 1.3em;
+      color: $key_color;
+      margin-top: vw(6);
+    }
+    .date {
+      font-size: vw(20);
+      letter-spacing: .05em;
+      color: $accent_color;
+      margin-top: vw(20);
+    }
+    .btn_container {
+      width: 100%;
+      height: vw(40);
+      display: flex;
+      justify-content: center;
+      margin: vw(30) auto 0;
+
+      .detail, .buy {
+        width: vw(122);
+        height: 100%;
+        border: vw(2) solid $key_color;
+        border-radius: vw(40);
+        margin: 0 vw(5);
+        box-sizing: border-box;
+        cursor: pointer;
+
+        p {
+          font-size: vw(20);
+          line-height: vw(40);
+          color: $key_color;
+        }
+      }
+    }
+  }
+
+  // 個別
+  .mdl_thumb {
+    &_1 {
+      .img_container {
+        .num {
+          top: calc(100% * (-25/380));
+          left: calc(100% * (5/305));
+          transform: rotate(-1deg);
+        }
+      }
+    }
+    &_2 {
+      .img_container {
+        .num {
+          top: calc(100% * (40/380));
+          right: calc(100% * (-10/305));
+          transform: rotate(2deg);
+        }
+      }
+    }
+    &_3 {
+      .img_container {
+        .num {
+          top: calc(100% * (40/380));
+          left: calc(100% * (-17/305));
+          transform: rotate(-7deg);
+        }
+      }
+    }
+    &_4 {
+      .img_container {
+        .num {
+          top: calc(100% * (154/380));
+          left: calc(100% * (-15/305));
+          transform: rotate(4deg);
+        }
+      }
+    }
+    &_5 {
+      .img_container {
+        .num {
+          top: calc(100% * (160/380));
+          left: calc(100% * (-11/305));
+          transform: rotate(3deg);
+        }
+      }
+    }
+    &_6 {
+      .img_container {
+        .num {
+          top: calc(100% * (-30/380));
+          right: calc(100% * (15/305));
+          transform: rotate(-3deg);
+        }
+      }
+    }
+    &_7 {
+      .img_container {
+        .num {
+          top: calc(100% * (-25/380));
+          left: calc(100% * (5/305));
+          transform: rotate(-1deg);
+        }
+      }
+    }
+    &_8 {
+      .img_container {
+        .num {
+          top: calc(100% * (42/380));
+          right: calc(100% * (-10/305));
+          transform: rotate(2deg);
+        }
+      }
+    }
+    &_9 {
+      .img_container {
+        .num {
+          top: calc(100% * (38/380));
+          left: calc(100% * (-18/305));
+          transform: rotate(-7deg);
+        }
+      }
+    }
+    &_10 {
+      .img_container {
+        .num {
+          top: calc(100% * (153/380));
+          left: calc(100% * (-11/305));
+          transform: rotate(4deg);
+        }
+      }
+    }
+    &_11 {
+      .img_container {
+        .num {
+          top: calc(100% * (157/380));
+          left: calc(100% * (-10/305));
+          transform: rotate(4deg);
+        }
+      }
+    }
+    &_12 {
+      .img_container {
+        .num {
+          top: calc(100% * (-29/380));
+          right: calc(100% * (13/305));
+          transform: rotate(-5deg);
+        }
+      }
+    }
+    &_13 {
+      .img_container {
+        .num {
+          top: calc(100% * (120/380));
+          right: calc(100% * (-20/305));
+          transform: rotate(5deg);
+        }
+      }
+    }
+
+    &_10, &_11, &_12, &_13 {
+      .img_container {
+        .num {
+          width: fit-content;
+          position: absolute;
+          z-index: 5;
+
+          p {
+            letter-spacing: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// アニメーション
+.Contents {
+  .mdl_thumb {
+    .img_container {
+      .num {
+        opacity: 0;
+        transition: opacity .5s $ease-out-cubic;
+
+        &.inview--enter {
+          opacity: 1;
+        }
+      }
+    }
+
+    &_1, &_3, &_6, &_7, &_9, &_12 {
+      .img_container {
+        .num {
+          &.inview--enter {
+            p {
+              animation: rattlingPlus 10s step-start infinite;
+            }
+          }
+        }
+      }
+    }
+    &_2, &_4, &_5, &_8, &_10, &_11, &_13 {
+      .img_container {
+        .num {
+          &.inview--enter {
+            p {
+              animation: rattlingMinus 10s step-start infinite;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: ($BREAKPOINT)){
+  .Contents {
+    width: ratio(750);
+    margin: -100vh auto 0;
+
+    // 共通
+    .mdl_thumb {
+      width: ratio(356);
+      padding-top: ratio(110);
+      position: relative;
+      z-index: 10;
+
+      .img_container {
+        width: ratio(304);
+
+        .thumb_img {
+          height: ratio(380);
+          border-radius: ratio(20);
+        }
+        .num {
+          p {
+            font-size: ratio(60);
+          }
+        }
+      }
+      .name {
+        font-size: ratio(35);
+        margin-top: ratio(34);
+      }
+      .brand {
+        font-size: ratio(18);
+        margin-top: ratio(6);
+      }
+      .date {
+        font-size: ratio(20);
+        margin-top: ratio(20);
+      }
+      .btn_container {
+        height: ratio(40);
+        margin: ratio(30) auto 0;
+
+        .detail, .buy {
+          width: ratio(122);
+          border: ratio(2) solid $key_color;
+          margin: 0 ratio(5);
+
+          p {
+            font-size: ratio(20);
+            line-height: ratio(40);
+          }
+        }
+      }
+    }
+  }
+
+  // hover
+  .Contents {
+    .mdl_thumb {
+      .img_container {
+        .thumb_img {
+          img {
+            transition: transform .3s $ease-out-expo, filter .3s $ease-out-expo;
+          }
+
+          &:hover {
+            img {
+              transform: scale(1.03);
+              filter: brightness(1.1);
+            }
+          }
+        }
+      }
+      .btn_container {
+        .detail, .buy {
+          transition: background-color .3s $ease-out-expo;
+
+          p {
+            transition: color .3s $ease-out-expo;
+          }
+
+          &:hover {
+            background-color: $key_color;
+
+            p {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}

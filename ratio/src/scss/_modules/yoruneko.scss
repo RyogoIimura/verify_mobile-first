@@ -1,0 +1,164 @@
+/*
+
+  yoruneko
+
+*/
+@use 'sass:math';
+
+@use '../_base/_project' as *;
+@use '../_libs/maam/mixin' as *;
+@use '../_libs/maam/media' as *;
+@use '../_libs/maam/easings' as *;
+@use '../_libs/maam/breakpoint' as *;
+
+.yoruneko {
+  $blue: #01293D;
+  $w: 375;
+
+  position: relative;
+  padding-top: vw(47);
+  padding-bottom: vw(89);
+  background: $blue;
+
+  .title {
+    width: vw(463);
+    margin-left: vw(160);
+    aspect-ratio: 420.5/97.3;
+
+  }
+
+  .moon {
+    width: vw(61);
+    aspect-ratio: 1/1;
+    position: relative;
+    margin-top: vw(78);
+    margin-left: vw(151);
+
+    img {
+      vertical-align: bottom;
+    }
+
+    &__shadow {
+      background: $blue;
+      aspect-ratio: 1/1;
+      width: 120%;
+      border-radius: 9999px;
+      position: absolute;
+      top: -10%;
+      left: -10%;
+      // opacity: 0.9;
+    }
+
+  }
+
+  .image {
+    width: vw(260);
+    margin: 0 auto;
+    margin-top: vw(-76);
+    aspect-ratio: 261/309;
+    border-radius: 50%;
+    position: relative;
+    z-index: 10;
+    cursor: pointer;
+    border-radius: 50%;
+    overflow: hidden;
+    img {
+      transform: scale(1);
+      transition: 0.4s $ease-out-quart;
+    }
+  }
+
+  .deco {
+    width: vw(127);
+    margin-top: vw(-85);
+    margin-left: auto;
+    margin-right: vw(52);
+  }
+
+  .ss {
+    color: #8B8B8E;
+    writing-mode: vertical-rl;
+    font-size: vw(15);
+    @include Nim_R;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: vw(84);
+  }
+
+  .lead {
+    text-align: center;
+    color: $wh;
+    font-size: vw(26);
+    margin-top: vw(86);
+  }
+
+  .trigger {
+    margin: 0 auto;
+    margin-top: vw(44);
+    background: $bk;
+    border: none;
+    color: $wh;
+    @include Nim_B;
+    font-size: vw(26);
+    border-radius: 9999px;
+    width: vw(334);
+    padding: vw(16);
+    cursor: pointer;
+    display: block;
+    transform: scale(1);
+    transition: transform 0.3s cubic-bezier(0,.59,.3,1.32);
+
+    span {
+      display: inline-block;
+      transform: scale(1);
+      transition: transform 0.3s cubic-bezier(0,.59,.3,1.32);
+    }
+  }
+}
+
+@media screen and (min-width: ($BREAKPOINT)){
+  .yoruneko {
+    padding-top: ratio(47);
+    padding-bottom: ratio(89);
+
+    .title {
+      width: ratio(463);
+      margin-left: ratio(160);
+    }
+
+    .moon {
+      width: ratio(61);
+      margin-top: ratio(78);
+      margin-left: ratio(151);
+    }
+
+    .image {
+      width: ratio(260);
+      margin-top: ratio(-76);
+    }
+
+    .deco {
+      width: ratio(127);
+      margin-top: ratio(-85);
+      margin-right: ratio(52);
+    }
+
+    .ss {
+      font-size: ratio(15);
+      margin-top: ratio(84);
+    }
+
+    .lead {
+      font-size: ratio(26);
+      margin-top: ratio(86);
+    }
+
+    .trigger {
+      margin-top: ratio(44);
+      font-size: ratio(26);
+      width: ratio(334);
+      padding: ratio(16);
+    }
+  }
+}

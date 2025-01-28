@@ -1,0 +1,55 @@
+@use 'sass:math';
+@use '../../../_common/_libs/project/setting' as *;
+
+// SP
+.contents_wrapper {
+  .bg_fix {
+    display: none;
+  }
+}
+
+// PC
+@media screen and (min-width: ($BREAKPOINT)){
+  .contents_wrapper {
+    position: relative;
+
+    .bg_fix {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      height: 100vh;
+      position: sticky;
+      top: 0;
+
+      .bg_content {
+        width: 50%;
+        height: 100vh;
+
+        .link_wrapper {
+          width: fit-content;
+          box-sizing: border-box;
+
+          .page_link_btn {
+            cursor: pointer;
+          }
+        }
+        &_left {
+          background-color: rgb(186, 186, 186);
+
+          .link_wrapper {
+            padding-right: 300px;
+            margin: 100px 0 0 auto;
+          }
+        }
+        &_right {
+          background-color: rgb(255, 177, 177);
+
+          .link_wrapper {
+            padding-left: 300px;
+            margin: 100px auto 0 0;
+          }
+        }
+      }
+    }
+  }
+}

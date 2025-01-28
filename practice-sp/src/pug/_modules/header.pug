@@ -1,0 +1,33 @@
+-
+  const link = {
+    top: './',
+    cont: [
+      {
+        path: './sp_first/',
+        name: "sp_first",
+      }
+    ]
+  }
+
+.header#header
+  -if( page.name == 'top')
+    a.header_logo(href=`${link.top}`) TOP
+  -else
+    a.header_logo(href=`.${link.top}`) TOP
+
+  .nav_bg#nav_bg.navBtn
+
+  .nav#nav
+    .nav_container
+      -if( page.name == 'top')
+        -for( i = 0; i < link.cont.length; i++ )
+          a(href=`${link.cont[i].path}`): p!=link.cont[i].name
+      -else
+        -for( i = 0; i < link.cont.length; i++ )
+          a(href=`.${link.cont[i].path}`): p!=link.cont[i].name
+
+  .hamburger.navBtn
+    .hamburger_container
+      .line.hamburgerLine1
+      .line.hamburgerLine2
+      .line.hamburgerLine3

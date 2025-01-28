@@ -1,0 +1,20 @@
+include ../_data/data
+include ../_mixin/maam/share
+include ../_mixin/maam/text_split
+//- include ../_mixin/maam/picture
+include ../_mixin/maam/svg
+include ../_mixin/maam/credit
+include ../_mixin/maam/_utils
+block data
+
+doctype html
+//- <!DOCTYPE html>
+html(lang="ja")
+  head
+    include head
+    block head
+
+  body
+    block content
+    block loading
+    block script

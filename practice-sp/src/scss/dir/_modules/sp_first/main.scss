@@ -1,0 +1,204 @@
+@use 'sass:math';
+@use '../../../_common/_libs/project/setting' as *;
+
+// SP
+.Main {
+  color: $key_color;
+  .header{
+    display: flex;
+    justify-content: space-between;
+    font-size: vw(20);
+    width: vw(672);
+    margin: vw(30) auto 0;
+    letter-spacing: .05em;
+  }
+  .tenth{
+    width: vw(526);
+    margin: vw(124) auto 0;
+    svg{
+      overflow: visible;
+    }
+    .cls-1 {
+      fill: #08294d;
+      stroke-width: 0px;
+    }
+  }
+  .anniversary{
+    width: vw(536);
+    margin: vw(25) auto 0 vw(85);
+    .cls-1 {
+      fill: #08294d;
+      stroke-width: 0px;
+    }
+  }
+  .madison_blue{
+    width: vw(498);
+    margin: vw(68) auto 0;
+    .cls-1 {
+      fill: #08294d;
+      stroke-width: 0px;
+    }
+  }
+
+  .hel10_anniversary{
+    width: vw(352);
+    margin: vw(35) auto 0 vw(182);
+    .cls-1 {
+      fill: #e72410;
+    }
+
+    .cls-1, .cls-2 {
+      stroke-width: 0px;
+    }
+
+    .cls-2 {
+      fill: #08294d;
+    }
+  }
+  .topics{
+    font-size: vw(20);
+    text-align: center;
+    margin-top: vw(150);
+    letter-spacing: .07em;
+    line-height: 175%;
+    span{
+      font-size: vw(40);
+      margin-bottom: vw(20);
+      display: inline-block;
+    }
+  }
+  .line{
+    width: vw(2);
+    height: vw(179);
+    background-color: $key_color;
+    &_1{
+      margin: vw(81) auto 0;
+    }
+    &_2{
+      margin: vw(65) auto 0;
+    }
+  }
+  .lead{
+    margin-top: vw(55);
+    font-size: vw(24);
+    text-align: center;
+    line-height: 255%;
+    letter-spacing: .1em;
+  }
+  .scroll{
+    overflow: hidden;
+    margin-top: vw(129);
+    width: 100%;
+    display: flex;
+    li{
+      display: flex;
+      width: fit-content;
+      .scroll_hel10_anniversary{
+        width: fit-content;
+        padding-right: vw(107);
+        svg{
+          width:vw(281);
+          .cls-1 {
+            fill: #e72410;
+          }
+
+          .cls-1, .cls-2 {
+            stroke-width: 0px;
+          }
+
+          .cls-2 {
+            fill: #08294d;
+          }
+        }
+      }
+    }
+
+  }
+}
+
+// 演出
+.Main{
+  .scroll{
+    &_hel10_anniversary{
+      animation: infinity-scroll-left 10s infinite linear 0.5s both;
+    }
+  }
+
+  @keyframes infinity-scroll-left {
+    from {
+      transform: translateX(0);
+    }
+      to {
+      transform: translateX(-100%);
+    }
+    }
+}
+
+// PC
+@media screen and (min-width: ($BREAKPOINT)){
+  .Main {
+    .header{
+      font-size: 15px;
+      width: per(1200, $wth);
+      margin: min(per(18, $wth), 18px) auto 0;
+    }
+
+    .tenth{
+      width: 395px;
+      margin: 91px auto 0;
+    }
+
+    .anniversary{
+      width: 402px;
+      margin: 20px auto 0;
+    }
+
+    .madison_blue{
+      width:374px;
+      margin: 59px auto 0;
+    }
+
+    .hel10_anniversary{
+      width: 264px;
+      margin: 35px auto 0;
+    }
+
+    .topics{
+      font-size: 14px;
+      margin-top: 123px;
+      span{
+        font-size: 29px;
+        margin-bottom: 22px;
+      }
+    }
+    .line{
+      width: 1px;
+      max-height: 100px;
+      &_1{
+        margin: 45px auto 0;
+      }
+      &_2{
+        margin: 45px auto 0;
+      }
+    }
+    .lead{
+      margin-top: 45px;
+      font-size: 17px;
+    }
+    .scroll{
+      margin-top: 96px;
+
+      li{
+        width: 1455px;
+        .scroll_hel10_anniversary{
+          width: 288px;
+          padding-right: 80px;
+          svg{
+            width: 211px;
+          }
+        }
+      }
+
+    }
+  }
+}

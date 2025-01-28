@@ -1,0 +1,17 @@
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+// 普通のhover
+@mixin hover-default {
+  opacity: 1;
+  transition: .5s $ease-out-cubic;
+
+  @include hover {
+    opacity: 0.7;
+  }
+}

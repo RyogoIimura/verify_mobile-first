@@ -1,0 +1,117 @@
+/*
+
+  yoruneko
+
+*/
+@use 'sass:math';
+
+@use '../_base/_project' as *;
+@use '../_libs/maam/mixin' as *;
+@use '../_libs/maam/media' as *;
+@use '../_libs/maam/easings' as *;
+@use '../_libs/maam/breakpoint' as *;
+
+.yoruneko {
+  $blue: #01293D;
+  $w: 375;
+
+  position: relative;
+  @include mf(padding-top, (47));
+  @include mf(padding-bottom, (89));
+  background: $blue;
+
+  .title {
+    @include mf(width, (463));
+    @include mf(margin-left, (160));
+    aspect-ratio: 420.5/97.3;
+  }
+
+  .moon {
+    @include mf(width, (61));
+    aspect-ratio: 1/1;
+    position: relative;
+    @include mf(margin-top, (78));
+    @include mf(margin-left, (151));
+
+    img {
+      vertical-align: bottom;
+    }
+
+    &__shadow {
+      background: $blue;
+      aspect-ratio: 1/1;
+      width: 120%;
+      border-radius: 9999px;
+      position: absolute;
+      top: -10%;
+      left: -10%;
+      // opacity: 0.9;
+    }
+
+  }
+
+  .image {
+    @include mf(width, (260));
+    margin: 0 auto;
+    @include mf(margin-top, (-76));
+    aspect-ratio: 261/309;
+    border-radius: 50%;
+    position: relative;
+    z-index: 10;
+    cursor: pointer;
+    border-radius: 50%;
+    overflow: hidden;
+    img {
+      transform: scale(1);
+      transition: 0.4s $ease-out-quart;
+    }
+  }
+
+  .deco {
+    @include mf(width, (127));
+    @include mf(margin-top, (-85));
+    margin-left: auto;
+    @include mf(margin-right, (52));
+  }
+
+  .ss {
+    color: #8B8B8E;
+    writing-mode: vertical-rl;
+    @include mf(font-size, (15));
+    @include Nim_R;
+    position: absolute;
+    left: 0;
+    top: 0;
+    @include mf(margin-top, (84));
+  }
+
+  .lead {
+    text-align: center;
+    color: $wh;
+    @include mf(font-size, (26));
+    @include mf(margin-top, (86));
+  }
+
+  .trigger {
+    margin: 0 auto;
+    @include mf(margin-top, (44));
+    background: $bk;
+    border: none;
+    color: $wh;
+    @include Nim_B;
+    @include mf(font-size, (26));
+    border-radius: 9999px;
+    @include mf(width, (334));
+    @include mf(padding, (16));
+    cursor: pointer;
+    display: block;
+    transform: scale(1);
+    transition: transform 0.3s cubic-bezier(0,.59,.3,1.32);
+
+    span {
+      display: inline-block;
+      transform: scale(1);
+      transition: transform 0.3s cubic-bezier(0,.59,.3,1.32);
+    }
+  }
+}
