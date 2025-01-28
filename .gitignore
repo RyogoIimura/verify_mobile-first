@@ -1,9 +1,15 @@
 node_modules/
 # 画像以外のdist(案件ごとに書き換える)
-dist/**/*.css
-dist/**/*.js
-dist/**/*.txt
-dist/**/*.html
+fix-nav/dist/**/*.css
+fix-nav/dist/**/*.js
+fix-nav/dist/**/*.html
+ratio/dist/**/*.css
+ratio/dist/**/*.js
+ratio/dist/**/*.html
+ratio+vwPc/dist/**/*.css
+ratio+vwPc/dist/**/*.js
+ratio+vwPc/dist/**/*.html
+
 # Compiled Java class files
 *.class
 # Log files
